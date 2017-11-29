@@ -2,4 +2,4 @@
 
 + Response 200 (application/json)
 
-        <% include 200_res.json %>
+        <%_ include 200_res.json _%>
