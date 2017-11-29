@@ -1,0 +1,24 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# apiBuilder
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+<%_ /**
+    [] sample API
+*/ _%>
+## Questions Collection [/questions]
+
+<%_ /** [POST] 正常系パターン1 */ _%>
+<%_ include api/POST_sample/200_sample.md _%>
+<%_ /** [POST] 異常系パターン1 */ _%>
+<%_ // include api/POST_sample/res_400.json _%>
+<%_ /** [POST] 異常系パターン2 */ _%>
+<%_ // include api/POST_sample/res_400.json _%>
+
+<%_ /**  [GET] 正常系パターン1 */ _%>
+<%_ include api/GET_sample/200_sample.md _%>
+<%_ /**  [GET] 異常系パターン1 */ _%>
+<%_ // include api/GET_sample/400_sample.md _%>
+<%_ /**  [GET] 異常系パターン2 */ _%>
+<%_ // include api/GET_sample/500_sample.md _%>
