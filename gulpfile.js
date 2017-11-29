@@ -9,8 +9,9 @@ const reload = browserSync.reload;
 const TEMPLATE_FILES = ['src/**/*'];
 const BASE_FILE = 'src/index.ejs';
 const BUILD_DIR = 'dest';
+const APIARY_FILE = './apiary.apib';
 
-gulp.task('combine', function(){
+gulp.task('combine', () => {
   return gulp.src(BASE_FILE)
     .pipe(ejs({},{ ext: '.md' }))
     .pipe(rename('index.md'))
@@ -44,6 +45,12 @@ gulp.task('fileWatch', () => {
   gulp.watch(TEMPLATE_FILES, ['generate', reload]);
 });
 
+gulp.task('build', () => {
+  return gulp.src(BASE_FILE)
+    .pipe(ejs({},{ ext: '.md' }))
+    .pipe(rename(APIARY_FILE))
+    .pipe(gulp.dest('./'));
+});
+
 gulp.task('default', ['generate']);
-gulp.task('build', ['clean', 'generate']);
 gulp.task('watch', ['generate', 'fileWatch', 'browserSync']);
